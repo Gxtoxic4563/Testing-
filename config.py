@@ -22,16 +22,16 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = os.getenv("MONGO_DB_URI", "mongodb+srv://knight4563:knight4563@cluster0.a5br0se.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-MUSIC_BOT_NAME = os.getenv("MUSIC_BOT_NAME", "Infinity_powerfull_bot")
+MUSIC_BOT_NAME = os.getenv("MUSIC_BOT_NAME", "roohi_queen_bot")
 PRIVATE_BOT_MODE = os.getenv("PRIVATE_BOT_MODE", None)
 
 DURATION_LIMIT_MIN = int(os.getenv("DURATION_LIMIT", 100000))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(os.getenv("LOGGER_ID", -1003809966719))
+LOGGER_ID = int(os.getenv("LOGGER_ID", -1003778714841))
 
 # Get this value from @BRANDRD_ROBOT on Telegram by /id
-OWNER_ID = int(os.getenv("OWNER_ID", "8564072723"))
+OWNER_ID = int(os.getenv("OWNER_ID", "8676835917"))
 SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "8564072723").split()))
 
 ## Fill these variables if you're deploying on heroku.
@@ -53,7 +53,7 @@ GIT_TOKEN = os.getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "https://t.me/dark_musictm")
+SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "https://t.me/PhilosSoul")
 SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", "https://t.me/chattingzone0")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
