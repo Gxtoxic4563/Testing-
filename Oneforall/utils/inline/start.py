@@ -4,39 +4,28 @@ from pyrogram.enums import ButtonStyle
 import config
 from Oneforall import app
 
-# Premium Stickers IDs ki list (Alag-alag buttons ke liye)
-STICKERS = [
-    6312260233171312151, # Default Star
-    5433824103134530018, # Premium Badge
-    5431445213233261748, # Fire
-    5431718873433095333, # Heart
-    5443003051411513631, # Gear/Settings
-    5431634752706954211  # Globe/Link
-]
-
-def btn(text, style=ButtonStyle.DEFAULT, **kwargs):
+def btn(text, emoji_id, style=ButtonStyle.DEFAULT, **kwargs):
     """
-    Har button ke liye random Premium Sticker aur Custom Style select karta hai.
+    Har button ke liye specific emoji_id use karega.
     """
-    premium_id = random.choice(STICKERS)
     try:
         return InlineKeyboardButton(
             text=text,
-            icon_custom_emoji_id=premium_id,
+            icon_custom_emoji_id=emoji_id,
             style=style,
             **kwargs
         )
     except TypeError:
-        # Agar version purana ho toh normal button
+        # Fallback for older versions
         return InlineKeyboardButton(text=text, **kwargs)
 
 def start_panel(_):
     buttons = [
         [
-            # Add to Group - Green (SUCCESS)
-            btn(_["S_B_1"], url=f"https://t.me/{app.username}?startgroup=true", style=ButtonStyle.SUCCESS),
-            # Support - Blue (PRIMARY)
-            btn(_["S_B_2"], url=config.SUPPORT_CHAT, style=ButtonStyle.DANGER),
+            # Add to Group - 💞 (5438224604499819092)
+            btn(_["S_B_1"], 5438224604499819092, url=f"https://t.me/{app.username}?startgroup=true", style=ButtonStyle.SUCCESS),
+            # Support - 💜 (6026236216079290036)
+            btn(_["S_B_2"], 6026236216079290036, url=config.SUPPORT_CHAT, style=ButtonStyle.DANGER),
         ],
     ]
     return buttons
@@ -44,28 +33,28 @@ def start_panel(_):
 def private_panel(_):
     buttons = [
         [
-            # Add to Group - Green (SUCCESS)
-            btn(_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true", style=ButtonStyle.SUCCESS)
+            # Add to Group - 🥰 (5436346075998864232)
+            btn(_["S_B_3"], 5436346075998864232, url=f"https://t.me/{app.username}?startgroup=true", style=ButtonStyle.SUCCESS)
         ],
         [
-            # Profile - Blue (PRIMARY)
-            btn("ᴇʀᴇɴ ʏᴇᴀɢᴇʀ", url="https://t.me/toxication_infinity", style=ButtonStyle.PRIMARY),
-            # Support - Default (Grey)
-            btn(_["S_B_2"], url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS),
+            # Profile - 💜 (6026236216079290036)
+            btn("ᴇʀᴇɴ ʏᴇᴀɢᴇʀ", 6026236216079290036, url="https://t.me/toxication_infinity", style=ButtonStyle.PRIMARY),
+            # Support - 💞 (5438224604499819092)
+            btn(_["S_B_2"], 5438224604499819092, url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS),
         ],
         [
-            # Help/Settings - Blue (PRIMARY)
-            btn(_["S_B_4"], callback_data="settings_back_helper", style=ButtonStyle.PRIMARY)
+            # Help/Settings - ✅ (6001604106190330097)
+            btn(_["S_B_4"], 6001604106190330097, callback_data="settings_back_helper", style=ButtonStyle.PRIMARY)
         ],
         [
-            # Channel - Red (DANGER)
-            btn(_["S_B_6"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.DANGER),
-            # Other Channel - Blue (PRIMARY)
-            btn(_["S_B_5"], url="https://t.me/docker_git_bit", style=ButtonStyle.PRIMARY)
+            # Channel - 🎵 (6026256492619895014)
+            btn(_["S_B_6"], 6026256492619895014, url=config.SUPPORT_CHANNEL, style=ButtonStyle.DANGER),
+            # Other Channel - 💜 (6026236216079290036)
+            btn(_["S_B_5"], 6026236216079290036, url="https://t.me/docker_git_bit", style=ButtonStyle.PRIMARY)
         ],
         [
-            # Website Button - Green (SUCCESS)
-            btn("「 ⌯ ᴜᴘᴘєʀϻσσɴ ᴛᴜηєꜱ ⌯ 」", url="https://uppermooninfinity.jo3.org/", style=ButtonStyle.SUCCESS)
+            # Website Button - 🎵 (6026256492619895014)
+            btn("「 ⌯ ᴜᴘᴘєʀϻσσɴ ᴛᴜηєꜱ ⌯ 」", 6026256492619895014, url="https://uppermooninfinity.jo3.org/", style=ButtonStyle.SUCCESS)
         ],
     ]
     return buttons
