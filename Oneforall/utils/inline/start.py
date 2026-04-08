@@ -40,7 +40,7 @@ def private_panel(_):
             # Profile - 💜 (6026236216079290036)
             btn("ᴇʀᴇɴ ʏᴇᴀɢᴇʀ", 6026236216079290036, url="https://t.me/toxication_infinity", style=ButtonStyle.PRIMARY),
             # Support - 💞 (5438224604499819092)
-            btn(_["S_B_2"], 5438224604499819092, url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS),
+            btn(_["S_B_2"], 5438224604499819092, url=config.SUPPORT_CHAT, style=ButtonStyle.DANGER),
         ],
         [
             # Help/Settings - ✅ (6001604106190330097)
